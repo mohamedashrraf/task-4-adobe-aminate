@@ -251,7 +251,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_252 = function() {
+(lib.CachedBmp_272 = function() {
 	this.initialize(ss["index_atlas_1"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
@@ -496,7 +496,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_251 = function() {
+(lib.CachedBmp_271 = function() {
 	this.initialize(ss["index_atlas_3"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
@@ -1063,7 +1063,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_250 = function() {
+(lib.CachedBmp_270 = function() {
 	this.initialize(ss["index_atlas_2"]);
 	this.gotoAndStop(75);
 }).prototype = p = new cjs.Sprite();
@@ -1077,7 +1077,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_249 = function() {
+(lib.CachedBmp_269 = function() {
 	this.initialize(ss["index_atlas_2"]);
 	this.gotoAndStop(77);
 }).prototype = p = new cjs.Sprite();
@@ -1091,7 +1091,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_248 = function() {
+(lib.CachedBmp_268 = function() {
 	this.initialize(ss["index_atlas_2"]);
 	this.gotoAndStop(79);
 }).prototype = p = new cjs.Sprite();
@@ -2723,7 +2723,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.CachedBmp_252();
+	this.instance = new lib.CachedBmp_272();
 	this.instance.setTransform(2.2,6.25,0.5,0.5);
 
 	this.instance_1 = new lib.CachedBmp_207();
@@ -2781,7 +2781,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_174();
 	this.instance.setTransform(84.05,0,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_251();
+	this.instance_1 = new lib.CachedBmp_271();
 	this.instance_1.setTransform(0,3,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -7486,7 +7486,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_92();
 	this.instance.setTransform(14.2,0,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_250();
+	this.instance_1 = new lib.CachedBmp_270();
 	this.instance_1.setTransform(0,0.65,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -7512,7 +7512,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_90();
 	this.instance.setTransform(14.2,0,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_249();
+	this.instance_1 = new lib.CachedBmp_269();
 	this.instance_1.setTransform(0,0.65,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -7560,7 +7560,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.CachedBmp_88();
 	this.instance.setTransform(14.2,0,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_248();
+	this.instance_1 = new lib.CachedBmp_268();
 	this.instance_1.setTransform(0,0.65,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
@@ -25729,101 +25729,70 @@ if (reversed == null) { reversed = false; }
 		
 		changeSound = true;
 		
-		gameStage.animation_movieclip.visible = true;
+		gameStage.animation_movieclip.visible = true
 		gameStage.animation_movieclip.gotoAndPlay("frame15");
 		
 		gameStage.robotAction.visible = false;
 		
-		currentSound = "15";
+		currentSound = "15"
 		PlaySounds();
 		
-		showText([gameStage.text16_en, gameStage.text16_ar]);
+		showText([gameStage.text16_en, gameStage.text16_ar])
 		
 		// Initialize overlay on frame entry
 		gameStage.black_overlay.visible = true;
 		
-		// Get the input field
-		const titleInputField = document.getElementById('titleInput');
-		titleInputField.style.color = 'black';
-		titleInputField.style.fontSize = '32px';
-		// Ensure the input field has proper positioning
-		titleInputField.style.position = 'absolute';
-		titleInputField.style.zIndex = '1000'; // Ensure it’s above other elements
-		titleInputField.style.top = '50%'; // Adjust based on your layout
-		titleInputField.style.left = '50%';
-		titleInputField.style.transform = 'translate(-50%, -50%)';
-		
-		// Function to handle keyboard visibility on Android
-		function adjustInputForKeyboard() {
-		    // Store original position
-		    const originalTop = titleInputField.style.top;
-		
-		    // On focus, move input field up to avoid keyboard overlap
-		    titleInputField.addEventListener('focus', () => {
-		        // Android-specific: Move input field up
-		        titleInputField.style.top = '20%'; // Adjust this value based on your layout
-		        // Optionally scroll the canvas or container
-		        window.scrollTo(0, titleInputField.getBoundingClientRect().top - 50);
-		
-		        // Alternatively, adjust the canvas viewport
-		        document.body.style.height = '100vh';
-		        document.body.style.overflow = 'auto';
-		    });
-		
-		    // On blur, restore original position
-		    titleInputField.addEventListener('blur', () => {
-		        titleInputField.style.top = originalTop;
-		        document.body.style.height = '';
-		        document.body.style.overflow = '';
-		    });
-		}
-		
-		// Call the function to set up keyboard handling
-		adjustInputForKeyboard();
-		
-		// Handle keydown events
 		document.addEventListener('keydown', (event) => {
+		    const titleInputField = document.getElementById('titleInput');
+			titleInputField.style.color = 'black';
+			titleInputField.style.fontSize = '32px';
+		    
 		    // Hide overlay when typing starts
 		    if (gameStage.black_overlay.visible && titleInputField.value.length === 0) {
 		        gameStage.black_overlay.visible = false;
+			
 		    }
 		
 		    if (event.keyCode === 13) {
-		        // Create a hidden input to dismiss keyboard
-		        var tempInput = document.createElement('input');
-		        tempInput.style.position = 'absolute';
-		        tempInput.style.opacity = '0';
-		        document.body.appendChild(tempInput);
-		        tempInput.focus();
-		        tempInput.blur();
-		        document.body.removeChild(tempInput);
-		
+				// Create a hidden input to focus on
+				var tempInput = document.createElement('input');
+				tempInput.style.position = 'absolute';
+				tempInput.style.opacity = '0';
+				document.body.appendChild(tempInput);
+				tempInput.focus();
+				tempInput.blur();
+				document.body.removeChild(tempInput);
+				
 		        let titleInputValue = titleInputField.value.trim().toLowerCase();
-		
+		        
 		        if (titleInputValue === "the sphinx") {
-		            gameStage.animation_movieclip.visible = false;
-		            gameStage.robotAction.visible = true;
-		            gameStage.robotAction.gotoAndStop(0);
+		           
+					gameStage.animation_movieclip.visible = false;
+					gameStage.robotAction.visible = true;
+			        gameStage.robotAction.gotoAndStop(0);
 		            gameStage.robotAction.right_p.gotoAndPlay(1);
-		            correctAnsHandler(0);
+					correctAnsHandler(0);
 		            setTimeout(() => {
 		                gameStage.gotoAndStop("q1");
 		            }, 2500);
 		        } else {
-		            wrongAnsHandler(0);
-		            gameStage.animation_movieclip.visible = false;
-		            gameStage.robotAction.visible = true;
-		            gameStage.robotAction.gotoAndStop(1);
-		            gameStage.robotAction.wrong.gotoAndPlay(1);
+					wrongAnsHandler(0);
+					gameStage.animation_movieclip.visible = false;
+			        gameStage.robotAction.visible = true;
+			        gameStage.robotAction.gotoAndStop(1);
+					gameStage.robotAction.wrong.gotoAndPlay(1);
+					
+					
 		        }
 		    }
 		});
 		
-		// Translate text
+		
+		// translate text
 		gameStage.translate_btn.removeAllEventListeners();
-		gameStage.translate_btn.addEventListener('click', translateText.bind(this, textElements));
-		gameStage.translate_btn.addEventListener('click', PlaySounds.bind(this));
-		gameStage.translate_btn.addEventListener('click', ChangeLangIcon.bind(this));
+		gameStage.translate_btn.addEventListener('click',translateText.bind(this,textElements ));
+		gameStage.translate_btn.addEventListener('click',PlaySounds.bind(this));
+		gameStage.translate_btn.addEventListener('click',ChangeLangIcon.bind(this));
 	}
 	this.frame_15 = function() {
 		this.stop();
@@ -27151,32 +27120,32 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Image_1.png?1747134425276", id:"Image_1"},
-		{src:"images/index_atlas_1.png?1747134424588", id:"index_atlas_1"},
-		{src:"images/index_atlas_2.png?1747134424590", id:"index_atlas_2"},
-		{src:"images/index_atlas_3.png?1747134424590", id:"index_atlas_3"},
-		{src:"images/index_atlas_4.png?1747134424591", id:"index_atlas_4"},
-		{src:"images/index_atlas_5.png?1747134424591", id:"index_atlas_5"},
-		{src:"images/index_atlas_6.png?1747134424591", id:"index_atlas_6"},
-		{src:"images/index_atlas_7.png?1747134424591", id:"index_atlas_7"},
-		{src:"images/index_atlas_8.png?1747134424591", id:"index_atlas_8"},
-		{src:"images/index_atlas_9.png?1747134424591", id:"index_atlas_9"},
-		{src:"images/index_atlas_10.png?1747134424592", id:"index_atlas_10"},
-		{src:"images/index_atlas_11.png?1747134424592", id:"index_atlas_11"},
-		{src:"images/index_atlas_12.png?1747134424592", id:"index_atlas_12"},
-		{src:"images/index_atlas_13.png?1747134424592", id:"index_atlas_13"},
-		{src:"images/index_atlas_14.png?1747134424592", id:"index_atlas_14"},
-		{src:"images/index_atlas_15.png?1747134424592", id:"index_atlas_15"},
-		{src:"images/index_atlas_16.png?1747134424592", id:"index_atlas_16"},
-		{src:"images/index_atlas_17.png?1747134424592", id:"index_atlas_17"},
-		{src:"images/index_atlas_18.png?1747134424593", id:"index_atlas_18"},
-		{src:"images/index_atlas_19.png?1747134424593", id:"index_atlas_19"},
-		{src:"images/index_atlas_20.png?1747134424593", id:"index_atlas_20"},
-		{src:"images/index_atlas_21.png?1747134424593", id:"index_atlas_21"},
-		{src:"images/index_atlas_22.png?1747134424593", id:"index_atlas_22"},
-		{src:"components/lib/jquery-3.4.1.min.js?1747134425276", id:"lib/jquery-3.4.1.min.js"},
-		{src:"components/sdk/anwidget.js?1747134425276", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1747134425276", id:"an.TextInput"}
+		{src:"images/Image_1.png?1747135769378", id:"Image_1"},
+		{src:"images/index_atlas_1.png?1747135768676", id:"index_atlas_1"},
+		{src:"images/index_atlas_2.png?1747135768678", id:"index_atlas_2"},
+		{src:"images/index_atlas_3.png?1747135768679", id:"index_atlas_3"},
+		{src:"images/index_atlas_4.png?1747135768679", id:"index_atlas_4"},
+		{src:"images/index_atlas_5.png?1747135768679", id:"index_atlas_5"},
+		{src:"images/index_atlas_6.png?1747135768683", id:"index_atlas_6"},
+		{src:"images/index_atlas_7.png?1747135768683", id:"index_atlas_7"},
+		{src:"images/index_atlas_8.png?1747135768683", id:"index_atlas_8"},
+		{src:"images/index_atlas_9.png?1747135768683", id:"index_atlas_9"},
+		{src:"images/index_atlas_10.png?1747135768684", id:"index_atlas_10"},
+		{src:"images/index_atlas_11.png?1747135768684", id:"index_atlas_11"},
+		{src:"images/index_atlas_12.png?1747135768684", id:"index_atlas_12"},
+		{src:"images/index_atlas_13.png?1747135768684", id:"index_atlas_13"},
+		{src:"images/index_atlas_14.png?1747135768684", id:"index_atlas_14"},
+		{src:"images/index_atlas_15.png?1747135768684", id:"index_atlas_15"},
+		{src:"images/index_atlas_16.png?1747135768684", id:"index_atlas_16"},
+		{src:"images/index_atlas_17.png?1747135768684", id:"index_atlas_17"},
+		{src:"images/index_atlas_18.png?1747135768685", id:"index_atlas_18"},
+		{src:"images/index_atlas_19.png?1747135768685", id:"index_atlas_19"},
+		{src:"images/index_atlas_20.png?1747135768685", id:"index_atlas_20"},
+		{src:"images/index_atlas_21.png?1747135768685", id:"index_atlas_21"},
+		{src:"images/index_atlas_22.png?1747135768685", id:"index_atlas_22"},
+		{src:"components/lib/jquery-3.4.1.min.js?1747135769378", id:"lib/jquery-3.4.1.min.js"},
+		{src:"components/sdk/anwidget.js?1747135769378", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1747135769378", id:"an.TextInput"}
 	],
 	preloads: []
 };
