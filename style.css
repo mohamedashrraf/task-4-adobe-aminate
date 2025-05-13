@@ -1,0 +1,58 @@
+/* Disable tap highlight and any focus styling on all elements */
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* Disable the tap highlight */
+  -webkit-touch-callout: none; /* Prevent long press context menu */
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+
+.ui-textinput {
+  background-color: transparent;
+  text-align: center;
+}
+
+
+.ui-textinput1 {
+  background-color: transparent;
+  text-align: start;
+  font-size: 24px;
+}
+
+.ui-textinput3::before {
+  color: #666;
+  content: "Email";
+}
+input {
+  font-size: 24px;
+  border: none;
+  padding: 5px;
+  z-index: 1000;
+}
+
+input:focus {
+  outline: none;
+}
+.ui-textinput {
+  font-size: 22px;
+}
+
+.ui-textinput2 {
+  /* background-color: #F1F3F4; */
+  background-color: transparent;
+  font-size: 12px;
+  /* color: #868686; */
+}
+
+.ui-textinput3 {
+  background-color: transparent;
+  font-size: 12px;
+  /* color: #868686; */
+}
+
+.ui-textinput4 {
+  background-color: transparent;
+  font-size: 12px;
+  /* color: #868686; */
+}
